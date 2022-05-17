@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# In[17]:
+# In[46]:
 
 
 import pandas as pd
@@ -14,7 +14,7 @@ import json
 import csv
 
 
-# In[18]:
+# In[47]:
 
 
 # checking current working directory
@@ -31,7 +31,7 @@ for root, dirs, files in os.walk("event_data_cassandra_project"):
     #print(file_path_list)
 
 
-# In[19]:
+# In[48]:
 
 
 df = pd.DataFrame()
@@ -40,13 +40,39 @@ for f in file_path_list:
     df = df.append(df1,ignore_index=True)
 
 
-# In[20]:
+# In[49]:
+
+
+df = df.dropna()
+
+
+# In[40]:
+
+
+#for ind in df.index:
+    #if df['artist'][ind] == 'NaN':
+        #df = df.drop[ind]
+
+
+# In[ ]:
+
+
+
+
+
+# In[51]:
 
 
 df.to_csv('event_datafile_new.csv')
 
 
-# In[21]:
+# In[ ]:
+
+
+
+
+
+# In[52]:
 
 
 # checking the number of rows in new event csv file
